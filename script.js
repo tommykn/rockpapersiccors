@@ -15,5 +15,27 @@ function computerPlay() {
     } else
     return 'scissors';
 }
+// Then we set a varible playerselection equal to ''
 
 let playerSelection = ''
+
+// fundtion getplayerselection asked the user for input then it makes sure its the 
+// right input and then convents it to all lowercase and sets it equal to playerselection
+// if they still didn't enter the right input it just repeats the function.
+
+function getPlayerSelection() {
+    let x = prompt("Please type in Rock, Paper, or Scissors.").toLowerCase();
+    if (x != 'rock' && x != 'paper' && x != 'scissors') {
+        x = prompt("You made a typo please enter in Rock, Paper, or Scissors").toLowerCase();
+    }
+    
+    if (x === 'rock') {
+        playerSelection = 'rock';
+    } else if (x === 'paper') {
+        playerSelection = 'paper';
+    } else if (x === 'scissors') {
+        playerSelection = 'scissors';
+    } else {
+        getPlayerSelection();
+    }
+}
